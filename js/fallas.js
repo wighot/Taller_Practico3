@@ -1,4 +1,4 @@
-Swindow.onload = init;
+window.onload = init;
 
 function init() {
     var view = document.getElementById('view');
