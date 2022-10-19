@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <!--Validacion para DUI-->
+    <script src="js/DUI.js"></script>
+    <!--Validacion para poner comentarios de fallas-->
+    <script src="js/fallas.js"></script>
+    <title>Taller de Reparación</title>
+</head>
+<body>
+       <!--Validacion de formulario solo numeros y solo letras-->
+       <script type="text/javascript">
+        function solonumeros(evt){
+            var code = (evt.which) ? evt.which : evt.keyCode;
+            if(code==8) {
+              return true;
+            } else if(code>=48 && code<=57) {
+              return true;
+            } else{
+              return false;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function soloLetras(evt){
+        key = evt.keyCode || evt.which;
+        tecla = String.fromCharCode(key).toString();
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyzÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        especiales = [8, 37, 39, 46, 6]; // teclas que recibe el campo de texto.
+        tecla_especial = false
+
+        for(var i in especiales) {
+        if(key == especiales[i]) {
+            tecla_especial = true;
+            break;
+           }
+        }if(letras.indexOf(tecla) == -1 && !tecla_especial){
+        return false;
+           }
+        }
+    </script>
+
+    <header>
+        <h1 align="center" class="titulo">Taller de reparación 🛠️</h1>
+    <section>
+        <article>
+            <form name="frmcar" id="frmcar">
+            <div id="wrap">
+                <h1>Complete los siguientes campos de datos</h1>
+                <div id="form_wrap">
+                    <form id="contact-form" action="javascript:alert('¡Formulario Enviado!');"></form>
+                    <p id="formstatus"></p>
+                    <label for="name">Nombre completo: </label>
+                    <input type="text" name="name" value="" id="nom" onkeypress="return soloLetras(event);" required>
+
+                    <label for="name">DUI: </label>
+                    <input type="number" name="dui" value="" id="dui" onkeypress="return IsDUI(str);" required>
+
+                    <label for="name">NIT: </label>
+                    <input type="number" name="nit" value="" id="nit" onkeypress="return solonumeros(event);" required>
+
+                    <h3>Apartado de automóvil:</h3>
+
+                    <fieldset id="fldcar" class="group">
+                        <legend><span class="labelgroup">Datos del vehiculo:</span></legend>
+                        <label for="selfab">Marcas: </label>
+                        <select name="selfab" id="selfab">
+                            <option value="Toyota">Toyota</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Mitsubishi">Mitsubishi</option>
+                        </select>
+
+                            <label for="selmod">Modelo: </label>
+                            
+                        <select name="selmod" id="selmod">
+                            <option value="Corolla">Corolla</option>
+                            <option value="Echo">Echo</option>
+                            <option value="Yaris">Yaris</option>
+                            <option value="Avensis">Avensis</option>
+                            <option value="Camry">Camry</option>
+                            <option value="Land Cruiser">Land Cruiser</option>
+                            <option value="4 Runner">4 Runner</option>
+                            <option value="Hilux">Hilux</option>
+                        </select>
+
+                        <label for="txtanio">Año: </label>
+                        <input type="number" name="txtanio" placeholder="2015" maxlength="4" required>
+                        <br>
+                        <label for="radcolor" class="colores">Color:</label><br />
+                        <input type="radio" value="Blanco" alt="Marque el color del carro" id="radcolor"name="radcolor" />
+                        <label for="radcolor" class="colores">Blanco</label><br>
+                        <input type="radio" value="Negro" alt="Marque el color del carro" id="radcolor"name="radcolor" />
+                        <label for="radcolor" class="colores">Negro</label><br>
+                        <input type="radio" value="Gris" alt="Marque el color del carro" id="radcolor"name="radcolor" />
+                        <label for="radcolor" class="colores">Gris</label><br>
+                        <input type="radio" value="Azul" alt="Marque el color del carro" id="radcolor"name="radcolor" />
+                        <label for="radcolor" class="colores">Azul</label><br>
+                        <input type="radio" value="Verde" alt="Marque el color del carro" id="radcolor"name="radcolor" />
+                        <label for="radcolor" class="colores">Beige</label> <br />
+                        <br>
+                        <label for="txtPlaca">Placa: </label>
+                        <input type="text" name="placa" placeholder="P563-458" maxlength="7" />
+
+
+                    </fieldset>
+                    
+
+                    <div id="view"></div>
+                        <p>
+                            Presione + E para editar y Ctrl+S para guardar y ESC para cancelarlo.
+                        </p>
+                        <label for="fallas">Ingrese las fallas que presenta el vehiculo:</label>
+                        <textarea name="mensaje" id="area" value="Mensaje" id="mensaje"></textarea>
+                        <br><br>
+
+                    <input  class="button5" type="button" name="btnEnviar" id="enviar" value="Enviar" />
+
+                    <div id="infocarro"></div>
+                </div>
+                
+            </div>
+        </form>
+        </article>
+    </section>
+    <br>
+</body>
+<!--Validacion de modelo de carros-->
+<script src="js/modeloscarros.js"></script>
+</html>
