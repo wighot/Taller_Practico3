@@ -18,7 +18,7 @@ function iniciar(){
                 button.addEventListener("click", function(){
                     var seleccion = showRadioSelected(document.frmcar.radcolor);
                     carro.pedido(document.frmcar.selfab.value, document.frmcar.selmod.value,
-                        seleccion, document.frmcar.txtanio.value);
+                        seleccion, document.frmcar.txtanio.value , document.frmcar.placa.value , document.frmcar.nombre.value , document.frmcar.dui.value , document.frmcar.nit.value);
                         carro.mostrar();
                     }, false);
                 }
@@ -26,7 +26,7 @@ function iniciar(){
                     button.attachEvent("onclik", function(){
                         var seleccion = showRadioSelected(document.frmcar.radcolor);
                         carro.pedido(document.frmcar.selfab.value, document.frmcar.selmod.value,
-                            seleccion, document.frmcar.txtanio.value);
+                            seleccion, document.frmcar.txtanio.value , document.frmcar.placa.value, document.frmcar.nombre.value , document.frmcar.duui.value , document.frmcar.nit.value);
                             carro.mostrar();
                         });
                     }
@@ -43,26 +43,40 @@ function iniciar(){
                 //constructor Object()
                 var carro = new Object();
                 //Propiedades del objeto
+                carro.nom = "";
                 carro.fabricante = "";
                 carro.modelo = "";
                 carro.color = "";
                 carro.anio = "";
+                carro.plac = "";
+                carro.nit ="";
+                carro.dui ="";
                 //Métodos del objeto
-                carro.pedido = function(fab, mod, col, an){
+                carro.pedido = function(fab, mod, col, an, pla, nm, dd, n){
                     carro.fabricante = fab;
                     carro.modelo = mod;
                     carro.color = col;
                     carro.anio = an;
+                    carro.plac = pla;
+                    carro.nom = nm;
+                    carro.dui = dd;
+                    carro.nit = n;
                 }
                 carro.mostrar = function(){
                     var tabla = "";
                     var info = document.getElementById('infocarro');
                     tabla += "<table class=\"carinfo\">\n";
                     tabla += "<thead>\n\t<tr>\n";
-                    tabla += "\t\t<th colspan=\"2\">Datos del carro</th>\n";
+                    tabla += "\t\t<th colspan=\"2\">Datos de información</th>\n";
                     tabla += "\t</tr>\n</thead>\n";
                     tabla += "<tbody>\n\t";
-                    tabla += "\t<tr>\n\t\t<td>Fabricante: </td>\n";
+                    tabla += "\t<tr>\n\t\t<td>Nombre: </td>\n";
+                    tabla += "\t\t<td>" + carro.nom + "</td>\n\t</tr>\n";
+                    tabla += "\t<tr>\n\t\t<td>DUI: </td>\n";
+                    tabla += "\t\t<td>" + carro.dui + "</td>\n\t</tr>\n";
+                    tabla += "\t<tr>\n\t\t<td>NIT: </td>\n";
+                    tabla += "\t\t<td>" + carro.nit + "</td>\n\t</tr>\n";
+                    tabla += "\t<tr>\n\t\t<td>Marca: </td>\n";
                     tabla += "\t\t<td>" + carro.fabricante + "</td>\n\t</tr>\n";
                     tabla += "\t<tr>\n\t\t<td>Modelo: </td>\n";
                     tabla += "\t\t<td>" + carro.modelo + "</td>\n\t</tr>\n";
@@ -70,6 +84,8 @@ function iniciar(){
                     tabla += "\t\t<td>" + carro.color + "</td>\n\t</tr>\n";
                     tabla += "\t<tr>\n\t\t<td>Año: </td>\n";
                     tabla += "\t\t<td>" + carro.anio + "</td>\n\t</tr>\n";
+                    tabla += "\t<tr>\n\t\t<td>Placa: </td>\n";
+                    tabla += "\t\t<td>" + carro.plac + "</td>\n\t</tr>\n";
                     tabla += "\t</tbody>\n</table>\n";
                     info.innerHTML = tabla;
                     }
