@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Formulario de control de automoviles </title>
+</head>
+<body>
+    <header>
+        <h1 align="center" class="titulo">Taller de reparación 🛠️</h1>
+    <section>
+        <article>
+            <form name="frmcarro" id="frmcarro">
+            <div id="wrap">
+                <h1>Complete los siguientes campos de datos</h1>
+                <div id="form_wrap">
+                    <form id="contact-form" action="javascript:alert('¡Formulario Enviado!');"></form>
+                    <p id="formstatus"></p>
+                    <label for="name">Nombre completo: </label>
+                    <input type="text" name="name" value="" id="name" />
+
+                    <label for="name">DUI: </label>
+                    <input type="number" name="dui" value="" id="dui" />
+
+                    <label for="name">NIT: </label>
+                    <input type="number" name="nit" value="" id="nit" />
+
+                    <h3>Apartado de automóvil:</h3>
+
+                    <fieldset id="fldcarro" class="group">
+                        <legend><span class="labelgroup">Datos del vehiculo</span></legend>
+                        <label for="selfab">Marcas: </label>
+                        <select name="selmar" id="selmar">
+                            <option value="Toyota">Toyota</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Subaru">Subaru</option>
+                            <option value="Mazda">Mazda</option>
+                        </select>
+
+                        <label for="selmode">Modelo: </label>
+                        <select name="selmode" id="selmode">
+                            <option value="Corolla">Corolla</option>
+                            <option value="Echo">Echo</option>
+                            <option value="Hilux">Hilux</option>
+                            <option value="Hiace">Toyota Hiace</option>
+                            <option value="Supra">Supra</option>
+                            <option value="Camry">Camry</option>
+                            <option value="Etios">Etios</option>
+                        </select>
+
+                        <label for="txtanio">Año: </label>
+                        <input type="number" name="txtanio" placeholder="2012" maxlength="4" />
+                        <br><br>
+                        <label for="radcolor" class="colores">Color del vehiculo:</label><br>
+                        <input type="radio" value="Blanco" alt="Color del vehiculo" id="radcolor" name="radcolor" />
+                        <label for="radcolor" class="colores">Blanco</label><br>
+                        <input type="radio" value="Negro" alt="Color del vehiculo" id="radcolor" name="radcolor" />
+                        <label for="radcolor" class="colores">Negro</label><br>
+                        <input type="radio" value="Verde" alt="Color del vehiculo" id="radcolor" name="radcolor" />
+                        <label for="radcolor" class="colores">Verde</label><br>
+                        <input type="radio" value="Azul" alt="Color del vehiculo" id="radcolor" name="radcolor" />
+                        <label for="radcolor" class="colores">Azul</label><br>
+                        <input type="radio" value="Rojo" alt="Color del vehiculo" id="radcolor" name="radcolor" />
+                        <label for="radcolor" class="colores">Rojo</label><br>
+                        <br>
+                        <label for="txtPlaca">Placa: </label>
+                        <input type="text" name="txtPlaca" placeholder="P563-458" maxlength="7" />
+
+
+                    </fieldset>
+                    <p>
+                        Presione + E para editar y Ctrl+S para guardar y ESC para cancelarlo.
+                    </p>
+                    <label for="fallas">Ingrese las fallas que presenta el vehiculo:</label>
+                    <div id="vista"></div>
+                    <textarea name="mensaje" id="area" value="Mensaje" id="mensaje"></textarea>
+                    <br><br>
+                    <input type="button" name="btnEnviar" class="button5" id="enviar" value="Enviar" />
+
+
+                </div>
+                
+            </div>
+        </form>
+        </article>
+        <div id="Datoscarros"></div>
+        <article>
+        </article>
+    </section>
+    <br>
+</body>
+</html>
