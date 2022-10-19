@@ -56,10 +56,10 @@
                     <form id="contact-form" action="javascript:alert('¡Formulario Enviado!');"></form>
                     <p id="formstatus"></p>
                     <label for="name">Nombre completo: </label>
-                    <input type="text" name="name" value="" id="nom" onkeypress="return soloLetras(event);" required>
+                    <input type="text" name="nombre" value="" id="nom" onkeypress="return soloLetras(event);" required>
 
                     <label for="name">DUI: </label>
-                    <input type="number" name="dui" value="" id="dui" onkeypress="return IsDUI(str);" required>
+                    <input type="number" name="duii" value="" id="dui" onkeypress="return Isdui(srt); required>
 
                     <label for="name">NIT: </label>
                     <input type="number" name="nit" value="" id="nit" onkeypress="return solonumeros(event);" required>
@@ -116,7 +116,7 @@
 
                     <div id="view"></div>
                         <p>
-                            Presione Ctrl + E para editar y Ctrl+S para guardar y ESC para cancelarlo.
+                            Presione + E para editar y Ctrl+S para guardar y ESC para cancelarlo.
                         </p>
                         <label for="fallas">Ingrese las fallas que presenta el vehiculo:</label>
                         <textarea name="mensaje" id="area" value="Mensaje" id="mensaje"></textarea>
